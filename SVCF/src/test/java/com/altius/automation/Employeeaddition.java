@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -260,28 +261,44 @@ public class Employeeaddition {
 						Thread.sleep(2000);
 
 						// Designation 
+						try
+						{
 						String SR ="Enter Designation";
 						WebElement SRnum =d.findElement(By.xpath("//*[@id=\"cphMainContent_RequiredFieldValidator4\"]"));
 						if(SR.equals(SRnum.getText()))
 						{
 							logger.info("Designation field is suceessfully validated");
 						}
-						else
+						}
+						catch(Exception e)
 						{
+						
 							logger.error("Designation field is not suceessfully validated");
 							
 						}
 						try
 						{
-							WebElement invoice=d.findElement(By.id("cphMainContent_txtEmp_Designation"));
-							invoice.sendKeys("Manager");
-							logger.info("Designation is successfully entered");
+							Thread.sleep(2000);
+
+							WebElement designation =d.findElement(By.xpath("//*[@id=\"cphMainContent_DD_GP_chzn\"]/a"));
+							Thread.sleep(2000);
+							
+							designation.click();
+							WebElement manager =d.findElement(By.xpath("//*[@id=\"cphMainContent_DD_GP_chzn\"]/div/div/input"));
+							Thread.sleep(2000);
+
+							manager.sendKeys("Manager");
+							Thread.sleep(2000);
+
+							manager.sendKeys(Keys.TAB);
+						//	designation.selectByIndex(2);
+							logger.info("Designation is successfully selected");
 							
 						}
 						
 						catch(Exception e)
 						{
-							logger.error("Designation is not successfully entered");
+							logger.error("Designation is not successfully selected");
 							
 						}
 						break;
@@ -293,7 +310,7 @@ public class Employeeaddition {
 						Thread.sleep(2000);
 
 						// E mail
-					
+						
 						try
 						{
 							WebElement invoice=d.findElement(By.id("cphMainContent_txtEmail"));
@@ -419,7 +436,9 @@ public class Employeeaddition {
 	      em.beforetest();
 		  em.editemployee();
 		  em.employeesearch();
-		  
+		  em.employeeupdate();
+		  em.employeedel();
+		  em.aftertest();
 	  }
 		        
 	  

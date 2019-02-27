@@ -2,6 +2,7 @@ package com.altius.automation;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -158,22 +159,22 @@ public class Editemployee {
 	{
 
 		Actions action = new Actions(d);
-
+        Thread.sleep(2000);
 		try {
 
-			WebElement hover = d.findElement(By.xpath("//*[@id=\"cphMainContent_gridBranch_DXDataRow1\"]/td[1]/img[1]"));
+			WebElement hover = d.findElement(By.xpath("//*[@id=\"cphMainContent_gridBranch_DXDataRow0\"]/td[1]/img[1]"));
 			hover.click();
-			logger.info("Update button is successfully clicked");
+			logger.info("Employee Update button is successfully clicked");
 		}
 		catch (Exception e)
 		{
 			logger.error(e);
-			logger.error("Update button is not successfully clicked");
+			logger.error("Employee Update button is not successfully clicked");
 		}
 	// Changing the SR num 0 to 1258
 		try {
-
-			WebElement hover = d.findElement(By.id("cphMainContent_gridBranch_ef1_ASPxTextBox5_1_I"));
+			Thread.sleep(4000);
+			WebElement hover = d.findElement(By.name("ctl00$cphMainContent$gridBranch$ef0$ctl00$ASPxTextBox5"));
 			hover.clear();
 			hover.sendKeys("1258");
 			logger.info("SR num is successfully entered");
@@ -185,19 +186,97 @@ public class Editemployee {
 		}
 		// Clicking the update button
 		try {
-
-			WebElement hover = d.findElement(By.id("cphMainContent_gridBranch_ef1_ASPxTextBox5_1_I"));
-			hover.clear();
-			hover.sendKeys("1258");
-			logger.info("SR num is successfully entered");
+            Thread.sleep(2000);
+			WebElement hover = d.findElement(By.xpath("//*[@id=\"cphMainContent_gridBranch_DXEFC\"]/div/img[1]"));
+			hover.click();
+			logger.info("Update button is clicked successfully");
 		}
 		catch (Exception e)
 		{
 			logger.error(e);
-			logger.error("SR num is not entered");
+			logger.error("Update button is not clicked successfully");
+			
+		}
+	// Cancel button
+		Thread.sleep(5000);
+		d.findElement(By.xpath("//*[@id=\"cphMainContent_gridBranch_DXEFC\"]/div/img[2]")).click();
+	
+		// clicking the update buttto again
+		Thread.sleep(5000);
+
+		try {
+
+			WebElement hover = d.findElement(By.xpath("//*[@id=\"cphMainContent_gridBranch_DXDataRow0\"]/td[1]/img[1]"));
+			hover.click();
+			logger.info("Employee Update button is successfully clicked");
+		}
+		catch (Exception e)
+		{
+			logger.error(e);
+			logger.error("Employee Update button is not successfully clicked");
 		}
 	
+	// Checking the SR num
+		try {
+			Thread.sleep(4000);
+			WebElement hover = d.findElement(By.name("ctl00$cphMainContent$gridBranch$ef0$ctl00$ASPxTextBox5"));
+			String SR="1258";
+			System.out.println("the text is :"+hover.getAttribute("Value"));
+			if(SR.equals(hover.getAttribute("Value")))
+			{
+			logger.info("Employee is successfully updated by changing the SR num");
+			
+			d.findElement(By.xpath("//*[@id=\"cphMainContent_gridBranch_DXEFC\"]/div/img[2]")).click();
+
+		  }
+			}
+		catch (Exception e)
+		{
+			logger.error(e);
+			logger.error("Employee is not updated ");
+		}
 	
+	}
+	@Test(priority =4)
+	public void employeedel() throws InterruptedException
+	{
+
+        Thread.sleep(5000);
+		try {
+			
+			//*[@id="cphMainContent_gridBranch_DXDataRow0"]/td[1]/img[2]
+			WebElement hover = d.findElement(By.xpath("//*[@id=\"cphMainContent_gridBranch_DXDataRow0\"]/td[1]/img[2]"));
+			hover.click();
+	        Thread.sleep(2000);
+
+			Alert alert =d.switchTo().alert();
+	        Thread.sleep(2000);
+			alert.accept();
+	        Thread.sleep(4000);
+
+			WebElement hover1 = d.findElement(By.id("cphMainContent_gridBranch_DXFREditorcol3_I"));
+			hover1.clear();
+			hover1.sendKeys("Anand");
+			Thread.sleep(4000);
+			String data ="No data to display";
+			WebElement display =d.findElement(By.xpath("//*[@id=\"cphMainContent_gridBranch_DXMainTable\"]/tbody/tr[3]/td/div"));
+			System.out.println("The display test is :"+display.getText());
+			if(display.getText().equals(data))
+			{
+			logger.info("Employee is deleted successfully");
+			}
+			else 
+			{
+				logger.error("Employee is not deleted successfully");
+
+			}
+			
+		}
+		catch (Exception e)
+		{
+			logger.error(e);
+			logger.error("Employee is not deleted ");
+		}
 	}
 
 	@AfterTest()
