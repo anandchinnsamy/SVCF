@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [altiusTestSuite]">
+  <test thread-count="5" name="Browserlaunching(failed)">
+    <classes>
+      <class name="com.altius.automation.Loginpage">
+        <methods>
+          <include name="OnlycorrectPW"/>
+          <include name="wrongUN"/>
+          <include name="wrongPW"/>
+          <include name="OnlyCorrectUN"/>
+          <include name="OnlyCorrectUNPW"/>
+          <include name="browserlauching"/>
+          <include name="aftertest"/>
+        </methods>
+      </class> <!-- com.altius.automation.Loginpage -->
+    </classes>
+  </test> <!-- Browserlaunching(failed) -->
+</suite> <!-- Failed suite [altiusTestSuite] -->

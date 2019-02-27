@@ -1,0 +1,38 @@
+2019-02-26 14:46:52,805 | com.altius.automation.Employeeaddition |INFO | Central office option is selected successfully
+2019-02-26 14:46:53,479 | com.altius.automation.Employeeaddition |INFO | Valid UN is passed to the UN field
+2019-02-26 14:46:53,751 | com.altius.automation.Employeeaddition |INFO | Valid password data is passed to the PW field
+2019-02-26 14:47:12,454 | com.altius.automation.Employeeaddition |INFO | User able to login with Correct UN  &PW
+2019-02-26 14:47:17,777 | com.altius.automation.Employeeaddition |INFO | Mouse is successfully hovered on module 'Internal'
+2019-02-26 14:47:19,884 | com.altius.automation.Employeeaddition |INFO | Mouse is successfully hovered on screen 'Employee'
+2019-02-26 14:47:26,655 | com.altius.automation.Employeeaddition |INFO | Employee addition screen is successfully clicked
+2019-02-26 14:47:28,022 | com.altius.automation.Employeeaddition |INFO | Employee name field is suceessfully validated
+2019-02-26 14:47:28,297 | com.altius.automation.Employeeaddition |INFO | Employee name is successfully entered
+2019-02-26 14:47:29,902 | com.altius.automation.Employeeaddition |INFO | SR num is successfully entered
+2019-02-26 14:47:31,364 | com.altius.automation.Employeeaddition |INFO | Date is successfully entered
+2019-02-26 14:47:32,806 | com.altius.automation.Employeeaddition |INFO |  Address is suceessfully validated
+2019-02-26 14:47:33,349 | com.altius.automation.Employeeaddition |INFO | Address is successfully entered
+2019-02-26 14:47:36,647 | com.altius.automation.Employeeaddition |INFO | Designation field is suceessfully validated
+2019-02-26 14:47:36,880 | com.altius.automation.Employeeaddition |INFO | Designation is successfully entered
+2019-02-26 14:47:40,438 | com.altius.automation.Employeeaddition |INFO | E mail is successfully entered
+2019-02-26 14:47:41,881 | com.altius.automation.Employeeaddition |INFO | ph no field is suceessfully validated
+2019-02-26 14:47:42,246 | com.altius.automation.Employeeaddition |INFO | Ph no is successfully entered
+2019-02-26 14:47:43,542 | com.altius.automation.Employeeaddition |INFO | Salary field is suceessfully validated
+2019-02-26 14:47:43,903 | com.altius.automation.Employeeaddition |INFO | Salary is successfully entered
+2019-02-26 14:47:54,318 | com.altius.automation.Employeeaddition |INFO | Employee  is suceessfully inserted
+2019-02-26 14:48:05,032 | com.altius.automation.Employeeaddition |INFO | Ok button is clicked successfully
+2019-02-26 14:48:11,945 | com.altius.automation.Editemployee |INFO | Central office option is selected successfully
+2019-02-26 14:48:12,701 | com.altius.automation.Editemployee |INFO | Valid UN is passed to the UN field
+2019-02-26 14:48:13,048 | com.altius.automation.Editemployee |INFO | Valid password data is passed to the PW field
+2019-02-26 14:48:34,970 | com.altius.automation.Editemployee |INFO | User able to login with Correct UN  &PW
+2019-02-26 14:48:35,298 | com.altius.automation.Editemployee |INFO | Mouse is successfully hovered on module 'Internal'
+2019-02-26 14:48:37,409 | com.altius.automation.Editemployee |INFO | Mouse is successfully hovered on screen 'Employee'
+2019-02-26 14:48:44,500 | com.altius.automation.Editemployee |INFO | Mouse is successfully hovered on screen 'Employee'
+2019-02-26 14:48:52,643 | com.altius.automation.Editemployee |INFO | Employee is created successfully'
+2019-02-26 14:48:53,664 | com.altius.automation.Employeeaddition |INFO | Browser is closed successfully
+2019-02-27 10:10:22,932 | com.altius.automation.TestAutomation |ERROR | Item category of 'Angle Grinders' is not clicked 
+2019-02-27 10:10:22,956 | com.altius.automation.TestAutomation |ERROR | Qty of 5 is not entered for the first Qty
+2019-02-27 10:10:24,970 | com.altius.automation.TestAutomation |ERROR | Item is not successfully selected
+2019-02-27 10:10:24,982 | com.altius.automation.TestAutomation |ERROR | Item is not successfully added to the cart
+2019-02-27 10:10:26,996 | com.altius.automation.TestAutomation |ERROR | Mouse is not hovered successfully 
+2019-02-27 10:10:29,008 | com.altius.automation.TestAutomation |ERROR | Item is not successfully checked out
+2019-02-27 10:10:29,692 | com.altius.automation.TestAutomation |INFO | Browser is closed successfully

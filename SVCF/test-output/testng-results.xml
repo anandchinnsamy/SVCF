@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="129038" started-at="2019-02-26T09:16:44Z" finished-at="2019-02-26T09:18:53Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="129038" started-at="2019-02-26T09:16:44Z" finished-at="2019-02-26T09:18:53Z">
+      <class name="com.altius.automation.Employeeaddition">
+        <test-method status="PASS" signature="browserlauching()[pri:0, instance:com.altius.automation.Employeeaddition@371a67ec]" name="browserlauching" is-config="true" duration-ms="7585" started-at="2019-02-26T09:16:44Z" finished-at="2019-02-26T09:16:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserlauching -->
+        <test-method status="PASS" signature="branchname()[pri:1, instance:com.altius.automation.Employeeaddition@371a67ec]" name="branchname" duration-ms="553" started-at="2019-02-26T09:16:52Z" finished-at="2019-02-26T09:16:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- branchname -->
+        <test-method status="PASS" signature="OnlyCorrectUNPW()[pri:2, instance:com.altius.automation.Employeeaddition@371a67ec]" name="OnlyCorrectUNPW" duration-ms="19629" started-at="2019-02-26T09:16:52Z" finished-at="2019-02-26T09:17:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OnlyCorrectUNPW -->
+        <test-method status="PASS" signature="employeeaddition()[pri:3, instance:com.altius.automation.Employeeaddition@371a67ec]" name="employeeaddition" duration-ms="14198" started-at="2019-02-26T09:17:12Z" finished-at="2019-02-26T09:17:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- employeeaddition -->
+        <test-method status="PASS" signature="fieldvalidation()[pri:4, instance:com.altius.automation.Employeeaddition@371a67ec]" name="fieldvalidation" duration-ms="38372" started-at="2019-02-26T09:17:26Z" finished-at="2019-02-26T09:18:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fieldvalidation -->
+        <test-method status="PASS" signature="emplyeededit()[pri:5, instance:com.altius.automation.Employeeaddition@371a67ec]" name="emplyeededit" duration-ms="47606" started-at="2019-02-26T09:18:05Z" finished-at="2019-02-26T09:18:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- emplyeededit -->
+        <test-method status="PASS" signature="aftertest()[pri:0, instance:com.altius.automation.Employeeaddition@371a67ec]" name="aftertest" is-config="true" duration-ms="1017" started-at="2019-02-26T09:18:52Z" finished-at="2019-02-26T09:18:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftertest -->
+      </class> <!-- com.altius.automation.Employeeaddition -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

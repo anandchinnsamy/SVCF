@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
+  <test thread-count="1" name="login(failed)" parallel="tests">
+    <classes>
+      <class name="com.altius.automation.Allergy">
+        <methods>
+          <include name="allergyinsert"/>
+          <include name="allergyupdate"/>
+          <include name="browserlauching"/>
+          <include name="aftertest"/>
+        </methods>
+      </class> <!-- com.altius.automation.Allergy -->
+    </classes>
+  </test> <!-- login(failed) -->
+</suite> <!-- Failed suite [Suite] -->
