@@ -429,7 +429,7 @@ public class Employeeaddition {
 				
 		        }}
 	 @Test(priority =5)
-	  public static void emplyeededit() throws InterruptedException
+	  public void emplyeededit() throws InterruptedException
 	  
 	  {
 		 Editemployee em =new Editemployee();
@@ -438,7 +438,11 @@ public class Employeeaddition {
 		  em.employeesearch();
 		  em.employeeupdate();
 		  em.employeedel();
-		  em.aftertest();
+		  em.aftertest(); 
+		  employeeaddition();
+		  fieldvalidation();
+		  
+		  
 	  }
 		        
 	  
