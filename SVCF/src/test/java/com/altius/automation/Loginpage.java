@@ -70,9 +70,10 @@ public class Loginpage {
 				logger.info("Invalid data is successfully passed through the Username field");
 			  
 				d.findElement(By.name("btnlogin")).click();
+				Thread.sleep(2000);
+
 				Alert alert =d.switchTo().alert();
 				alert.accept();
-				Thread.sleep(2000);
 
 			} 
 			 
@@ -129,7 +130,7 @@ public class Loginpage {
 
 		@Test(priority =4)
 		public void wrongUNPW() {
-			logger.info("Checking the wrong UN and PW                      ");
+			logger.info("Checking the wrong UN and PW");
 			try {
 				d.findElement(By.id("txtUser")).sendKeys("annad");
 				logger.info("Invalid Username is entered to the UN field");
@@ -217,14 +218,13 @@ public class Loginpage {
            try
            {
 			Select branch =new Select(d.findElement(By.id("ddlBranch")));
-			branch.selectByVisibleText("Centraloffice");
+			branch.selectByVisibleText("CentralOffice");
 			logger.info("Central office option is selected successfully");
            }
            
            catch(Exception e )
 			{
 				logger.error("Central office option is not selected");
-				
 				
 			}
 

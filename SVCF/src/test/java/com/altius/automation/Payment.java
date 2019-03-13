@@ -109,12 +109,12 @@ public class Payment {
 
 		}
 		try {
-			 WebElement pw =d.findElement(By.xpath("//*[@id=\"smoothmenu_h\"]/ul/li[2]/ul/li[2]/ul/li[1]/a"));
+			 WebElement pw =d.findElement(By.xpath("//*[@id=\"smoothmenu_h\"]/ul/li[2]/ul/li[4]/ul/li[3]/a"));
 				pw.click();
-			logger.info("Hovered on payment  screen successfully");
+			logger.info("Hovered on payment advices screen successfully");
 		} catch (Exception e) {
 
-			logger.error("Not hovered on payment  screen");
+			logger.error("Not hovered on payment advice screen");
 
 		}
 		
