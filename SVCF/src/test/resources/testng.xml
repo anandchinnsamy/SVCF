@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test name="Test">
     <classes>
-      <class name="com.altius.automation.SVCFfullflow"/>
+      <class name="com.altius.automation.Loginpage"/>
     </classes>
   </test> 
 </suite> 
