@@ -15,439 +15,371 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Chequereceiptcurrentbranch {
-	 WebDriver d;
-	    Logger logger =Logger.getLogger(CashReceiptOtherBranch.class);
-	    String amount ="1250";
-	    
+public class Chequereceiptcurrentbranch extends Payment {
+//	WebDriver d;
+	Logger logger = Logger.getLogger(CashReceiptOtherBranch.class);
+	String amount = "1250";
+
 	@BeforeTest()
-	public void beforetest()
-	{
-/*
-		Logincredentials lc= new Logincredentials();
-		lc.browserlauching();
-		*/
+	public void beforetest() {
+		/*
+		 * Logincredentials lc= new Logincredentials(); lc.browserlauching();
+		 */
 
 		PropertyConfigurator.configure("log4jproperties.txt");
 
-	System.setProperty("webdriver.chrome.driver", "../SVCF/src/test/resources/chromedriver.exe");
-	d = new ChromeDriver();
-	
-	d.get("http://182.72.104.66:8080/SVCF/Login.aspx#");
-	
-	
-try
-{
-		Select branch =new Select(d.findElement(By.id("ddlBranch")));
-		branch.selectByVisibleText("CentralOffice");
-		logger.info("Central office option is selected successfully");
-}
+		System.setProperty("webdriver.chrome.driver", "../SVCF/src/test/resources/chromedriver.exe");
+		d = new ChromeDriver();
 
-catch(Exception e )
-		{
-			logger.error("Central office option is not selected");
-			
-			
+		d.get("http://182.72.104.66:8080/SVCF/Login.aspx#");
+
+		try {
+			Select branch = new Select(d.findElement(By.id("ddlBranch")));
+			branch.selectByVisibleText("CentralOffice");
+			logger.info("Central office option is selected successfully");
 		}
-	
+
+		catch (Exception e) {
+			logger.error("Central office option is not selected");
+
+		}
+
 		d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	   
-		WebElement un=d.findElement(By.id("txtUser"));
-		WebElement pw=d.findElement(By.id("txtPassword"));
+
+		WebElement un = d.findElement(By.id("txtUser"));
+		WebElement pw = d.findElement(By.id("txtPassword"));
 		un.clear();
 		pw.clear();
 
-
 		try {
-	    un.sendKeys("admin@svcf.com");
-		logger.info("Valid UN is passed to the UN field");
-		}
-		catch (Exception e)
-		{
+			un.sendKeys("admin@svcf.com");
+			logger.info("Valid UN is passed to the UN field");
+		} catch (Exception e) {
 			logger.error(e);
 			logger.error("Valid data is not passed to the UN field");
 
 		}
-		
-		try {	
-			
+
+		try {
+
 			pw.sendKeys("C*0/Svcf");
 			logger.info("Valid password data is passed to the PW field");
-		} 
-		catch (Exception e) 
-		{
+		} catch (Exception e) {
 
 			logger.error("Valid password is not passed to the PW field");
 
-		}       
-		WebElement click=d.findElement(By.name("btnlogin"));
-click.click();
-String URL ="http://182.72.104.66:8080/SVCF/Home.aspx";
-if(d.getCurrentUrl().equals(URL))
-{
+		}
+		WebElement click = d.findElement(By.name("btnlogin"));
+		click.click();
+		String URL = "http://182.72.104.66:8080/SVCF/Home.aspx";
+		if (d.getCurrentUrl().equals(URL)) {
 			logger.info("User able to login with Correct UN  &PW");
-}
-else
-{
-	 logger.error("User is not able to login with correct UN and PW");
-	 
-}
+		} else {
+			logger.error("User is not able to login with correct UN and PW");
+
+		}
 
 	}
-	 	
-	
 
-	@Test(priority =1)
-	public void Transactionshover() throws InterruptedException
-	{
-	Thread.sleep(5000);
+	@Test(priority = 1)
+	public void Transactionshover9() throws InterruptedException {
+		Thread.sleep(5000);
 
-	
-try
-{  
-	// Transaction hover
-	Actions action =new Actions(d);
-	//*[@id="smoothmenu_h"]/ul/li[2]/a
-		WebElement branch =d.findElement(By.xpath("//*[@id=\"smoothmenu_h\"]/ul/li[2]/a"));
-		action.moveToElement(branch).build().perform();
-		
-		logger.info("Hovered on 'Transaction' module successfully" );
-}
+		try {
+			// Transaction hover
+			Actions action = new Actions(d);
+			// *[@id="smoothmenu_h"]/ul/li[2]/a
+			WebElement branch = d.findElement(By.xpath("//*[@id=\"smoothmenu_h\"]/ul/li[2]/a"));
+			action.moveToElement(branch).build().perform();
 
-catch(Exception e )
-		{
+			logger.info("Hovered on 'Transaction' module successfully");
+		}
+
+		catch (Exception e) {
 			logger.error("Not Hovered on 'Transaction' module ");
-			
-			
-		}
-	
-// Receipt details
-try
-{
-	// Receipt details hover
-	Actions action =new Actions(d);
-	Thread.sleep(1000);
-	//*[@id="smoothmenu_h"]/ul/li[2]/ul/li[1]/a
-		WebElement branch =d.findElement(By.xpath("//*[@id=\"smoothmenu_h\"]/ul/li[2]/ul/li[1]/a"));
-		action.moveToElement(branch).build().perform();
-		
-		logger.info("Hovered on 'Receipt details' screen successfully" );
-}
 
-catch(Exception e )
-		{
+		}
+
+		// Receipt details
+		try {
+			// Receipt details hover
+			Actions action = new Actions(d);
+			Thread.sleep(1000);
+			// *[@id="smoothmenu_h"]/ul/li[2]/ul/li[1]/a
+			WebElement branch = d.findElement(By.xpath("//*[@id=\"smoothmenu_h\"]/ul/li[2]/ul/li[1]/a"));
+			action.moveToElement(branch).build().perform();
+
+			logger.info("Hovered on 'Receipt details' screen successfully");
+		}
+
+		catch (Exception e) {
 			logger.error("Not Hovered on 'receipt details' screen ");
-			
-		
+
 		}
-//CRR
-try
-{
-	// CRR hover
-	Actions action =new Actions(d);
-	Thread.sleep(1000);
+		// CRR
+		try {
+			// CRR hover
+			Actions action = new Actions(d);
+			Thread.sleep(1000);
 
-		WebElement branch =d.findElement(By.xpath("//*[@id=\"smoothmenu_h\"]/ul/li[2]/ul/li[1]/ul/li[2]/a"));
-		action.moveToElement(branch).build().perform();
-		
-		logger.info("Hovered on 'CRR' screen successfully" );
-}
+			WebElement branch = d.findElement(By.xpath("//*[@id=\"smoothmenu_h\"]/ul/li[2]/ul/li[1]/ul/li[2]/a"));
+			action.moveToElement(branch).build().perform();
 
-catch(Exception e )
-		{
+			logger.info("Hovered on 'CRR' screen successfully");
+		}
+
+		catch (Exception e) {
 			logger.error("Not Hovered on 'CRR' screen ");
-			
-			
+
 		}
-	// Cash receipt current branch
-try
-{
-	// Receipt details hover
-	Actions action =new Actions(d);
-	Thread.sleep(1000);
+		// Cash receipt current branch
+		try {
+			// Receipt details hover
+			Actions action = new Actions(d);
+			Thread.sleep(1000);
 
-		WebElement branch =d.findElement(By.xpath("//*[@id=\"smoothmenu_h\"]/ul/li[2]/ul/li[1]/ul/li[2]/ul/li[1]/a"));
-		action.moveToElement(branch).build().perform();
-		branch.click();
-		
-		logger.info("Hovered on 'Cheque current branch' screen successfully" );
-}
+			WebElement branch = d
+					.findElement(By.xpath("//*[@id=\"smoothmenu_h\"]/ul/li[2]/ul/li[1]/ul/li[2]/ul/li[1]/a"));
+			action.moveToElement(branch).build().perform();
+			branch.click();
 
-catch(Exception e )
-		{
+			logger.info("Hovered on 'Cheque current branch' screen successfully");
+		}
+
+		catch (Exception e) {
 			logger.error("Not Hovered on 'Current branch details' screen ");
-			
-			
+
 		}
 
 	}
-	
-	@Test(priority =2)
-	public void CRRinsert() throws InterruptedException
-	{
-	Thread.sleep(5000);
 
-	
-	try
-	{
+	@Test(priority = 2)
+	public void CRRinsert1() throws InterruptedException {
+		Thread.sleep(5000);
 
-		WebElement designation =d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlColloctorName_chzn\"]/a"));
-		Thread.sleep(1000);
-		
-		designation.click();
-		WebElement manager =d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlColloctorName_chzn\"]/div/div/input"));
-		Thread.sleep(1000);
+		try {
 
-		manager.sendKeys("kennady");
-		Thread.sleep(1000);
+			WebElement designation = d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlColloctorName_chzn\"]/a"));
+			Thread.sleep(1000);
 
-		manager.sendKeys(Keys.TAB);
-	//	designation.selectByIndex(2);
-		logger.info("Collector name is successfully selected");
-		
-	}
-	
-	catch(Exception e)
-	{
-		logger.error("Collector name is not successfully selected");
-	}
-	
-	// Received by
-	try
-	{
+			designation.click();
+			WebElement manager = d
+					.findElement(By.xpath("//*[@id=\"cphMainContent_ddlColloctorName_chzn\"]/div/div/input"));
+			Thread.sleep(1000);
 
-		WebElement designation =d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlEmployee_chzn\"]/a"));
-		Thread.sleep(1000);
-		
-		designation.click();
-		WebElement manager =d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlEmployee_chzn\"]/div/div/input"));
-		Thread.sleep(1000);
+			manager.sendKeys("cash");
+			Thread.sleep(1000);
 
-		manager.sendKeys("kennady");
-		Thread.sleep(1000);
+			manager.sendKeys(Keys.TAB);
+			// designation.selectByIndex(2);
+			logger.info("Collector name is successfully selected");
 
-		manager.sendKeys(Keys.TAB);
-	//	designation.selectByIndex(2);
-		logger.info("Received by is successfully selected");
-		
-	}
-	
-	catch(Exception e)
-	{
-		logger.error("Received by is not selected");
-	}
-	 // Total amount
-	  try
-	    {
-	    	Thread.sleep(1000);
+		}
 
-			WebElement branch =d.findElement(By.name("ctl00$cphMainContent$txtTotalAmount"));
+		catch (Exception e) {
+			logger.error("Collector name is not successfully selected");
+		}
+
+		// Received by
+		try {
+
+			WebElement designation = d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlEmployee_chzn\"]/a"));
+			Thread.sleep(1000);
+
+			designation.click();
+			WebElement manager = d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlEmployee_chzn\"]/div/div/input"));
+			Thread.sleep(1000);
+
+			manager.sendKeys("kennady");
+			Thread.sleep(1000);
+
+			manager.sendKeys(Keys.TAB);
+			// designation.selectByIndex(2);
+			logger.info("Received by is successfully selected");
+
+		}
+
+		catch (Exception e) {
+			logger.error("Received by is not selected");
+		}
+		// Total amount
+		try {
+			Thread.sleep(1000);
+
+			WebElement branch = d.findElement(By.name("ctl00$cphMainContent$txtTotalAmount"));
 
 			branch.sendKeys(amount);
-			logger.info("Amount is successfully entered" );
-	    }
-	    
-	    catch(Exception e )
-			{
-				logger.error("Amount is not entered");
-				
-			
-			}
-	
-	// Receipt date
-	  try
-	    {
-	    	Thread.sleep(1000);
+			logger.info("Amount is successfully entered");
+		}
 
-			WebElement branch =d.findElement(By.name("ctl00$cphMainContent$txtReceivedDate"));
+		catch (Exception e) {
+			logger.error("Amount is not entered");
+
+		}
+
+		// Receipt date
+		try {
+			Thread.sleep(1000);
+
+			WebElement branch = d.findElement(By.name("ctl00$cphMainContent$txtReceivedDate"));
 
 			branch.sendKeys("10102018");
-			logger.info("Receipt date is successfully entered" );
-	    }
-	    
-	    catch(Exception e )
-			{
-				logger.error("Receipt is not entered");
-				
-			
-			}
+			logger.info("Receipt date is successfully entered");
+		}
+
+		catch (Exception e) {
+			logger.error("Receipt is not entered");
+
+		}
 	}
 
-	@Test(priority =3)
-	public void transactions() throws InterruptedException
-	{
-	Thread.sleep(5000);
+	@Test(priority = 3)
+	public void transactions1() throws InterruptedException {
+		Thread.sleep(5000);
 
-	
-	try
-	{
+		try {
 
-		WebElement designation =d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlToken_chzn\"]/a"));
-		Thread.sleep(1000);
-		
-		designation.click();//*[@id="cphMainContent_ddlToken_chzn"]/div/div/input
-		WebElement manager =d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlToken_chzn\"]/div/div/input"));
-		Thread.sleep(1000);
+			WebElement designation = d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlToken_chzn\"]/a"));
+			Thread.sleep(1000);
 
-		manager.sendKeys("MLM-04/1");
-		Thread.sleep(1000);
+			designation.click();// *[@id="cphMainContent_ddlToken_chzn"]/div/div/input
+			WebElement manager = d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlToken_chzn\"]/div/div/input"));
+			Thread.sleep(1000);
 
-		manager.sendKeys(Keys.TAB);
-		
-		
-	//	designation.selectByIndex(2);
-		logger.info("MLM-04/1 is successfully selected");
-		
-	}
-	
-	catch(Exception e)
-	{
-		logger.error("MLM-04/1 is not selected");
-	}
-	
-	d.findElement(By.id("cphMainContent_TxtMemberName")).sendKeys(Keys.TAB);
-	
-	
-	  try
-	    {
-	    	Thread.sleep(1000);
+			manager.sendKeys(a);
+			Thread.sleep(1000);
 
-			WebElement branch =d.findElement(By.id("cphMainContent_txtAmount"));
+			manager.sendKeys(Keys.TAB);
+
+			// designation.selectByIndex(2);
+			logger.info("MLM-04/1 is successfully selected");
+
+		}
+
+		catch (Exception e) {
+			logger.error("MLM-04/1 is not selected");
+		}
+
+		d.findElement(By.id("cphMainContent_TxtMemberName")).sendKeys(Keys.TAB);
+
+		try {
+			Thread.sleep(1000);
+
+			WebElement branch = d.findElement(By.id("cphMainContent_txtAmount"));
 
 			branch.sendKeys(amount);
-			logger.info("Amount is successfully entered" );
-	    }
-	    
-	    catch(Exception e )
-			{
-				logger.error("Amount is not entered");
-				
-			
-			}
-	  // Add button
-	  try
-	    {
-	    	Thread.sleep(1000);
+			logger.info("Amount is successfully entered");
+		}
 
-			WebElement branch =d.findElement(By.name("ctl00$cphMainContent$ButtonAdd"));
+		catch (Exception e) {
+			logger.error("Amount is not entered");
+
+		}
+		// Add button
+		try {
+			Thread.sleep(1000);
+
+			WebElement branch = d.findElement(By.name("ctl00$cphMainContent$ButtonAdd"));
 
 			branch.click();
-			logger.info("Add button is clicked successfully" );
-	    }
-	    
-	    catch(Exception e )
-			{
-				logger.error("Add button is not clicked");
-				
-			
-			}
-	  
-	  // cheque number 
-	  try
-	    {
-	    	Thread.sleep(1000);
+			logger.info("Add button is clicked successfully");
+		}
 
-			WebElement branch =d.findElement(By.name("ctl00$cphMainContent$txtCheque"));
+		catch (Exception e) {
+			logger.error("Add button is not clicked");
 
-			branch.sendKeys("12458");
-			logger.info("Cheque Number is entered successfully" );
-	    }
-	    
-	    catch(Exception e )
-			{
-				logger.error("Cheque Number is not entered");
-				
-			
-			}
-	  
-	  // bank head
+		}
 
-		try
-		{
-
-			WebElement designation =d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlBankHead_chzn\"]/a"));
+		// cheque number
+		try {
 			Thread.sleep(1000);
-			
-			designation.click();//*[@id="cphMainContent_ddlToken_chzn"]/div/div/input
-			WebElement manager =d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlBankHead_chzn\"]/div/div/input"));
+
+			WebElement branch = d.findElement(By.name("ctl00$cphMainContent$txtCheque"));
+
+			branch.sendKeys("12459");
+			logger.info("Cheque Number is entered successfully");
+		}
+
+		catch (Exception e) {
+			logger.error("Cheque Number is not entered");
+
+		}
+
+		// bank head
+
+		try {
+
+			WebElement designation = d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlBankHead_chzn\"]/a"));
+			Thread.sleep(1000);
+
+			designation.click();// *[@id="cphMainContent_ddlToken_chzn"]/div/div/input
+			WebElement manager = d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlBankHead_chzn\"]/div/div/input"));
 			Thread.sleep(1000);
 
 			manager.sendKeys("city");
 			Thread.sleep(1000);
 
 			manager.sendKeys(Keys.TAB);
-			
-			
-		//	designation.selectByIndex(2);
+
+			// designation.selectByIndex(2);
 			logger.info("Bank is successfully selected");
-			
+
 		}
-		
-		catch(Exception e)
-		{
+
+		catch (Exception e) {
 			logger.error("Bank is not selected");
-			
+
 		}
 		// Cheque date
-		 
-		  try
-		    {
-		    	Thread.sleep(3000);
 
-				WebElement branch =d.findElement(By.name("ctl00$cphMainContent$txtDateinCheque"));
+		try {
+			Thread.sleep(3000);
 
-				branch.sendKeys("10102018");
-				logger.info("Cheque date is entered successfully" );
-		    }
-		    
-		    catch(Exception e )
-				{
-					logger.error("Cheque date is not entered");
-					
-				}
-	  // Generate button
-	  
-	  try
-	    {
-	    	Thread.sleep(3000);
+			WebElement branch = d.findElement(By.name("ctl00$cphMainContent$txtDateinCheque"));
 
-			WebElement branch =d.findElement(By.name("ctl00$cphMainContent$btnGenerate"));
+			branch.sendKeys("10102018");
+			logger.info("Cheque date is entered successfully");
+		}
+
+		catch (Exception e) {
+			logger.error("Cheque date is not entered");
+
+		}
+		// Generate button
+
+		try {
+			Thread.sleep(3000);
+
+			WebElement branch = d.findElement(By.name("ctl00$cphMainContent$btnGenerate"));
 
 			branch.click();
-			logger.info("Generate button is clicked successfully" );
-	    }
-	    
-	    catch(Exception e )
-			{
-				logger.error("Generate button is not clicked");
-				
-			}
-	  // Yes button
-	  try
-	    {
-	    	Thread.sleep(4000);
+			logger.info("Generate button is clicked successfully");
+		}
 
-			WebElement branch =d.findElement(By.name("ctl00$cphMainContent$Button1"));
+		catch (Exception e) {
+			logger.error("Generate button is not clicked");
+
+		}
+		// Yes button
+		try {
+			Thread.sleep(4000);
+
+			WebElement branch = d.findElement(By.name("ctl00$cphMainContent$Button1"));
 
 			branch.click();
-			logger.info("Cheque receipt for current branch is added successfully" );
-	    }
-	    
-	    catch(Exception e )
-			{
-				logger.error("Cash receipt is not added");
-				
-			}
-}
+			logger.info("Cheque receipt for current branch is added successfully");
+		}
+
+		catch (Exception e) {
+			logger.error("Cash receipt is not added");
+
+		}
+	}
+
 	@AfterTest()
-	public void aftertest()
-	{
+	public void aftertest() {
 
-	d.quit();	
+		d.quit();
 	}
 
 }
-
-	
-	
-

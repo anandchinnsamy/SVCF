@@ -15,13 +15,14 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Payment {
-	WebDriver d;
+public class Payment extends Auctionfeed
+ {
+//	WebDriver d;
 	Logger logger = Logger.getLogger(CashReceiptOtherBranch.class);
 	String amount = "1250";
 
 	@BeforeTest()
-	public void beforetest() {
+	public void beforetest7() {
 		/*
 		 * Logincredentials lc= new Logincredentials(); lc.browserlauching();
 		 */
@@ -109,7 +110,7 @@ public class Payment {
 
 		}
 		try {
-			 WebElement pw =d.findElement(By.xpath("//*[@id=\"smoothmenu_h\"]/ul/li[2]/ul/li[4]/ul/li[3]/a"));
+			 WebElement pw =d.findElement(By.xpath("//*[@id=\"smoothmenu_h\"]/ul/li[2]/ul/li[2]/ul/li[1]/a"));
 				pw.click();
 			logger.info("Hovered on payment advices screen successfully");
 		} catch (Exception e) {
@@ -135,7 +136,7 @@ public class Payment {
 			WebElement manager =d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlGroupNumber_chzn\"]/div/div/input"));
 			Thread.sleep(1000);
 
-			manager.sendKeys("MLT30");
+			manager.sendKeys(a);
 			Thread.sleep(1000);
 
 			manager.sendKeys(Keys.TAB);
@@ -162,7 +163,7 @@ public class Payment {
 			WebElement manager =d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlMemberName_chzn\"]/div/div/input"));
 			Thread.sleep(1000);
 
-			manager.sendKeys("MLT");
+			manager.sendKeys(name);
 			Thread.sleep(1000);
 
 			manager.sendKeys(Keys.TAB);

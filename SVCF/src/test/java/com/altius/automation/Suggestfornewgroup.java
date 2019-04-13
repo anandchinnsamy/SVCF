@@ -13,12 +13,13 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Suggestfornewgroup {
-	 WebDriver d;
+public class Suggestfornewgroup extends Subscriberaddition
+{
+	// WebDriver d;
 	    Logger logger =Logger.getLogger(Auctionedit.class);
 	    
 	    @BeforeTest
-	    public void beforetest() throws InterruptedException
+	    public void beforetest5() throws InterruptedException
 	    {
 	    	PropertyConfigurator.configure("log4jproperties.txt");
 
@@ -82,9 +83,9 @@ public class Suggestfornewgroup {
 	    }
 	    
 	@Test(priority =1)
-	public void editauctionhover() throws InterruptedException
+	public void editauctionhover1() throws InterruptedException
 	{
-
+        Thread.sleep(15000);
 		// editauction screen
 		Actions action = new Actions(d);
 
@@ -135,7 +136,7 @@ public class Suggestfornewgroup {
 	
 
 	@Test(priority=2)
-	public void suggest() throws InterruptedException
+	public void suggestfornewgroup() throws InterruptedException
 	{
 		try
 		{
@@ -147,7 +148,7 @@ public class Suggestfornewgroup {
 			WebElement manager =d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlChitGroup_chzn\"]/div/div/input"));
 			Thread.sleep(1000);
 
-			manager.sendKeys("Chitgroup");
+			manager.sendKeys(a);
 			Thread.sleep(1000);
 
 			manager.sendKeys(Keys.TAB);
@@ -164,7 +165,7 @@ public class Suggestfornewgroup {
 		}
 		
 		// Branch name
-		try
+		/*try
 		{
 
 			WebElement designation =d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlBranchName_chzn\"]/a"));
@@ -188,9 +189,9 @@ public class Suggestfornewgroup {
 		catch(Exception e)
 		{
 			logger.error("Branch is not successfully selected");
-		}
+		}*/
 	
-	 Thread.sleep(25000);
+	 Thread.sleep(5000);
 	 
 	 // Membere name
 		try
@@ -203,7 +204,7 @@ public class Suggestfornewgroup {
 			WebElement manager =d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlMembName_chzn\"]/div/div/input"));
 			Thread.sleep(1000);
 
-			manager.sendKeys("ramasamy");
+			manager.sendKeys(name);
 			Thread.sleep(1000);
 
 			manager.sendKeys(Keys.TAB);
@@ -223,7 +224,7 @@ public class Suggestfornewgroup {
 	// No of tolens
 		try {
 			 WebElement pw =d.findElement(By.name("ctl00$cphMainContent$txtNoofTokens"));
-				pw.sendKeys("34");
+				pw.sendKeys("1");
 				
 			logger.info("No of tokens is  successfully entered");
 		} 
@@ -259,7 +260,7 @@ public class Suggestfornewgroup {
 			WebElement manager =d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlMoneyCollector_chzn\"]/div/div/input"));
 			Thread.sleep(1000);
 
-			manager.sendKeys("coimbatore");
+			manager.sendKeys("office");
 			Thread.sleep(1000);
 
 			manager.sendKeys(Keys.TAB);
@@ -328,7 +329,7 @@ public class Suggestfornewgroup {
 		}
 		Thread.sleep(2000);
 		// Final yes button
-		try {
+		/*try {
 			
 			String suggestion ="You Have successFully Suggested Mr/Ms./Mrs :K. Ramasamy|288, 9th Block, C.M.C Colony, V.H. Road, Coimbatore-641001";
 			
@@ -354,9 +355,12 @@ public class Suggestfornewgroup {
 
 		}
 		
-		
-		Thread.sleep(4000);
+		*/
 
+		 WebElement pw1 =d.findElement(By.name("ctl00$cphMainContent$Button1"));
+		 pw1.click();
+		logger.info("Memeber is successfully suggested");
+		
 	}
 	
 	

@@ -14,13 +14,14 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Auctionfeed {
-	WebDriver d;
+public class Auctionfeed extends Foremanpayment
+{
+//	WebDriver d;
 	Logger logger = Logger.getLogger(Filingvoucher.class);
 	String amount = "1250";
 
 	@BeforeTest()
-	public void beforetest() {
+	public void beforetest6() {
 		/*
 		 * Logincredentials lc= new Logincredentials(); lc.browserlauching();
 		 */
@@ -81,7 +82,7 @@ public class Auctionfeed {
 	}
 	
 	@Test(priority=1)
-	public void paymenthover()
+	public void auctionhover()
 	{
         // Hovering in trnsaction screen
 		try {
@@ -135,7 +136,7 @@ public class Auctionfeed {
 			WebElement manager =d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlChitNo_chzn\"]/div/div/input"));
 			Thread.sleep(1000);
 
-			manager.sendKeys("Chitgroup");
+			manager.sendKeys(a);
 			Thread.sleep(1000);
 
 			manager.sendKeys(Keys.TAB);
@@ -188,7 +189,7 @@ public class Auctionfeed {
 			WebElement manager =d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlBenefName_chzn\"]/div/div/input"));
 			Thread.sleep(1000);
 
-			manager.sendKeys("chitgroup");
+			manager.sendKeys(name);
 			Thread.sleep(1000);
 
 			manager.sendKeys(Keys.TAB);
@@ -207,6 +208,7 @@ public class Auctionfeed {
 		try {
 			 WebElement pw =d.findElement(By.name("ctl00$cphMainContent$txtPrizamt"));
 				pw.sendKeys("10000");
+				pw.sendKeys(Keys.TAB);
 			logger.info("Prozed amount is successfully entered");
 		} 
 		catch (Exception e) {
@@ -214,6 +216,7 @@ public class Auctionfeed {
 			logger.error("Prize is not entered");
 
 		}
+		Thread.sleep(5000);
 		
 		// Default interest field
 		try {
@@ -226,6 +229,7 @@ public class Auctionfeed {
 			logger.error("Default interest is not entered");
 
 		}
+		Thread.sleep(5000);
 		// Due amount
 		try {
 			 WebElement pw =d.findElement(By.name("ctl00$cphMainContent$txtDueAmount"));
@@ -237,6 +241,7 @@ public class Auctionfeed {
 			logger.error("Due amount is not entered");
 
 		}
+		Thread.sleep(5000);
 		// Add amount field
 		try {
 			 WebElement pw =d.findElement(By.name("ctl00$cphMainContent$btnAdd"));
@@ -249,6 +254,8 @@ public class Auctionfeed {
 
 		}
 		Thread.sleep(3000);
+		
+		d.findElement(By.name("ctl00$cphMainContent$btnOK")).click();
 	}
 	
 	@AfterTest()

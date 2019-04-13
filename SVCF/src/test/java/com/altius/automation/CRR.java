@@ -16,21 +16,22 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class CRR {
+public class CRR extends Chequereceiptcurrentbranch
+{
 
 	 WebDriver d;
 	    Logger logger =Logger.getLogger(CRR.class);
 	    String amount ="1250";
 	    
 	@BeforeTest()
-	public void beforetest()
+	public void beforetest8()
 	{
 /*
 		Logincredentials lc= new Logincredentials();
 		lc.browserlauching();
 		*/
 
-		PropertyConfigurator.configure("log4jproperties.txt");
+	PropertyConfigurator.configure("log4jproperties.txt");
 
 	System.setProperty("webdriver.chrome.driver", "../SVCF/src/test/resources/chromedriver.exe");
 	d = new ChromeDriver();
@@ -199,7 +200,7 @@ public class CRR {
 		WebElement manager =d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlColloctorName_chzn\"]/div/div/input"));
 		Thread.sleep(1000);
 
-		manager.sendKeys("kennady");
+		manager.sendKeys("cash");
 		Thread.sleep(1000);
 
 		manager.sendKeys(Keys.TAB);
@@ -310,7 +311,7 @@ public class CRR {
 				WebElement manager =d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlTokennew_chzn\"]/div/div/input"));
 				Thread.sleep(1000);
 
-				manager.sendKeys("MLM-04/1");
+				manager.sendKeys("sat");
 				Thread.sleep(1000);
 
 				manager.sendKeys(Keys.TAB);

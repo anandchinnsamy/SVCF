@@ -12,16 +12,17 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Agreementandauctiondetails {
-	WebDriver d;
-	Logger logger = Logger.getLogger(Filingvoucher.class);
+public class Agreementandauctiondetails extends Addfdrandpsodetails {
+	//WebDriver d;
+	Logger logger = Logger.getLogger(Agreementandauctiondetails.class);
 	String amount = "1250";
 
 	@BeforeTest()
-	public void beforetest() {
+	public void beforetest3() throws InterruptedException {
 		
 
 		PropertyConfigurator.configure("log4jproperties.txt");
@@ -81,8 +82,9 @@ public class Agreementandauctiondetails {
 	}
 	
 	@Test(priority=1)
-	public void groupadditionhover() throws InterruptedException
+	public void aggrementhover() throws InterruptedException 
 	{
+		Thread.sleep(5000);
         // Hovering in trnsaction screen
 		try {
            WebElement pw =d.findElement(By.xpath("//*[@id=\"smoothmenu_h\"]/ul/li[3]/a"));
@@ -118,8 +120,8 @@ public class Agreementandauctiondetails {
 
 			logger.error("Not hovered on chit group addition voucher");
 
+			
 		}
-		Thread.sleep(1000);
 		try {
 			 WebElement pw =d.findElement(By.xpath("//*[@id=\"smoothmenu_h\"]/ul/li[3]/ul/li[1]/ul/li[1]/ul/li[3]/a"));
 				pw.click();
@@ -146,7 +148,7 @@ public class Agreementandauctiondetails {
 			WebElement manager =d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlChitGroup_chzn\"]/div/div/input"));
 			Thread.sleep(1000);
 
-			manager.sendKeys("chitgroup");
+			manager.sendKeys(a);
 			Thread.sleep(1000);
 
 			manager.sendKeys(Keys.TAB);
@@ -251,7 +253,7 @@ public class Agreementandauctiondetails {
 			}
 			Thread.sleep(3000);
 			// Ok button
-			String ok ="Group : ChitGroup inserted Successfully";
+			/*String ok ="Group : ChitGroup inserted Successfully";
 			
 			WebElement status =d.findElement(By.id("cphMainContent_lblContent"));
 			
@@ -267,8 +269,11 @@ public class Agreementandauctiondetails {
 			{
 				
 				logger.error("PSO and FDR is not added");
-			}
+			}*/
 			
+			d.findElement(By.name("ctl00$cphMainContent$BtnOK")).click();
+			Thread.sleep(2000);
+			logger.info("PSO and FDR details added successfully");
 			
 	   }
 

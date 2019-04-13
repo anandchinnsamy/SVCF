@@ -14,12 +14,14 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Loginpage {
-    WebDriver d;
-    Logger logger =Logger.getLogger(TestAutomation.class);
+public class Loginpage extends Logincredentials
+{
+   /* WebDriver d;
+    Logger logger =Logger.getLogger(Loginpage.class);
 
+    
 	@BeforeTest()
-   	public void browserlauching()
+   	public void browserlauching1()
    	{
 		PropertyConfigurator.configure("log4jproperties.txt");
 
@@ -27,7 +29,7 @@ public class Loginpage {
 	d = new ChromeDriver();
 	
 	d.get("http://182.72.104.66:8080/SVCF/Login.aspx#");
-   	}
+   	}*/
 	
 
 		String uname1 = "anand";
@@ -38,9 +40,11 @@ public class Loginpage {
 	@Test(priority =1)
    public void WithoutUNPW() 
 	{
+		
 			try {
 
 				d.findElement(By.name("btnlogin")).click();
+				
 				Thread.sleep(2000);
 				Alert alert =d.switchTo().alert();
 				alert.accept();
@@ -66,6 +70,7 @@ public class Loginpage {
 
 				WebElement un = d.findElement(By.id("txtUser"));
 				un.sendKeys("anand");
+				
 
 				logger.info("Invalid data is successfully passed through the Username field");
 			  
@@ -74,7 +79,8 @@ public class Loginpage {
 
 				Alert alert =d.switchTo().alert();
 				alert.accept();
-
+				
+				
 			} 
 			 
 			    catch (Exception e) {
@@ -212,6 +218,7 @@ public class Loginpage {
 			Alert alert =d.switchTo().alert();
 			alert.accept();
 		}
+		
 		@Test(priority =7)
 		public void branchname()
 		{
@@ -230,16 +237,13 @@ public class Loginpage {
 
 		}
 		@Test(priority =8)
-		public void OnlyCorrectUNPW() {
-			d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		   
-			WebElement un=d.findElement(By.id("txtUser"));
-			WebElement pw=d.findElement(By.id("txtPassword"));
-			un.clear();
-			pw.clear();
-
+		public void OnlyCorrectUNPW() 
+		{
 
 			try {
+				
+				WebElement un=d.findElement(By.id("txtUser"));
+
 		    un.sendKeys("admin@svcf.com");
 			logger.info("Valid UN is passed to the UN field");
 			}
@@ -250,7 +254,8 @@ public class Loginpage {
 			}
 			
 			try {	
-				
+				WebElement pw=d.findElement(By.id("txtPassword"));
+
 				pw.sendKeys("C*0/Svcf");
 				logger.info("Valid password data is passed to the PW field");
 			} 
@@ -259,6 +264,7 @@ public class Loginpage {
 				logger.error("Valid password is not passed to the PW field");
 
 			}
+			
             WebElement click=d.findElement(By.name("btnlogin"));
              click.click();
              String URL ="http://182.72.104.66:8080/SVCF/Home.aspx";

@@ -13,12 +13,13 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Approvalfornewgroup {
-	 WebDriver d;
+public class Approvalfornewgroup extends Suggestfornewgroup {
+	// WebDriver d;
 	    Logger logger =Logger.getLogger(Auctionedit.class);
 	    
+
 	    @BeforeTest
-	    public void beforetest() throws InterruptedException
+	    public void beforetest10() throws InterruptedException
 	    {
 	    	PropertyConfigurator.configure("log4jproperties.txt");
 
@@ -96,7 +97,7 @@ public class Approvalfornewgroup {
 		}
 		catch (Exception e)
 		{
-			logger.error(e);
+		//	logger.error(e);
 			logger.error("Mouse is not successfully hovered on module 'Group and confidential report'");
 		}
 		  //  Hover on auction
@@ -146,7 +147,7 @@ public class Approvalfornewgroup {
 			WebElement manager =d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlChitGroup_chzn\"]/div/div/input"));
 			Thread.sleep(1000);
 
-			manager.sendKeys("Chitgroup");
+			manager.sendKeys(a);
 			Thread.sleep(1000);
 
 			manager.sendKeys(Keys.TAB);

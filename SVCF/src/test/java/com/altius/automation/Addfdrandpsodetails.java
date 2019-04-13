@@ -15,13 +15,14 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Addfdrandpsodetails {
-	WebDriver d;
-	Logger logger = Logger.getLogger(Filingvoucher.class);
+public class Addfdrandpsodetails  extends Groupaddition
+{
+//	WebDriver d;
+	Logger logger = Logger.getLogger(Addfdrandpsodetails.class);
 	String amount = "1250";
 
 	@BeforeTest()
-	public void beforetest() {
+	public void beforetest2() throws InterruptedException {
 		
 
 		PropertyConfigurator.configure("log4jproperties.txt");
@@ -77,11 +78,12 @@ public class Addfdrandpsodetails {
 			logger.error("User is not able to login with correct UN and PW");
 
 		}
+		
 
 	}
 	
 	@Test(priority=1)
-	public void groupadditionhover()
+	public void fdrandpsdhover() throws InterruptedException
 	{
         // Hovering in trnsaction screen
 		try {
@@ -147,7 +149,7 @@ public class Addfdrandpsodetails {
 			WebElement manager =d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlChitGroup_chzn\"]/div/div/input"));
 			Thread.sleep(1000);
 
-			manager.sendKeys("chitgroup");
+			manager.sendKeys(a);
 			Thread.sleep(1000);
 
 			manager.sendKeys(Keys.TAB);
@@ -335,7 +337,7 @@ public class Addfdrandpsodetails {
 		}
 		Thread.sleep(3000);
 		// Ok button
-		String ok ="Group : ChitGroup inserted Successfully";
+	/*	String ok ="Group : ChitGroup inserted Successfully";
 		
 		WebElement status =d.findElement(By.id("cphMainContent_lblContent"));
 		
@@ -351,9 +353,12 @@ public class Addfdrandpsodetails {
 		{
 			
 			logger.error("PSO and FDR is not added");
-		}
+		}*/
 		
-		
+
+		d.findElement(By.name("ctl00$cphMainContent$BtnOK")).click();
+		Thread.sleep(2000);
+		logger.info("PSO and FDR details added successfully");
 	   }
 	
 	
