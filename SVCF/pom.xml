@@ -49,6 +49,9 @@
 		<artifactId>maven-surefire-plugin</artifactId>
 		<version>3.0.0-M3</version>
 		<configuration>
+		<suiteXmlFiles>
+                     <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+                  </suiteXmlFiles>
 			<additionalClasspathElements>
 				<additionalClasspathElement>path/to/additional/resources</additionalClasspathElement>
 				<additionalClasspathElement>path/to/additional/jar</additionalClasspathElement>

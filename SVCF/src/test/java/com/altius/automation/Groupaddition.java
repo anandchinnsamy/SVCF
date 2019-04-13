@@ -4,24 +4,27 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.ClickAction;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Groupaddition {
+public class Groupaddition extends Loginpage
+{
 
-	WebDriver d;
-	Logger logger = Logger.getLogger(Filingvoucher.class);
+	//WebDriver d;
+	Logger logger = Logger.getLogger(Groupaddition.class);
 	String amount = "1250";
 
 	@BeforeTest()
-	public void beforetest() {
+	public void beforetest1() throws InterruptedException {
 		
 
 		PropertyConfigurator.configure("log4jproperties.txt");
@@ -56,7 +59,6 @@ public class Groupaddition {
 		} catch (Exception e) {
 			logger.error(e);
 			logger.error("Valid data is not passed to the UN field");
-
 		}
 
 		try {
@@ -81,17 +83,20 @@ public class Groupaddition {
 	}
 	
 	@Test(priority=1)
-	public void groupadditionhover()
+	public void groupadditionhover1() throws InterruptedException
 	{
+		Thread.sleep(5000);
+		
         // Hovering in trnsaction screen
 		try {
            WebElement pw =d.findElement(By.xpath("//*[@id=\"smoothmenu_h\"]/ul/li[3]/a"));
+           System.out.println("The field is "+pw.getTagName());
 			pw.click();
 			logger.info("Hovered on group and confidential report module successfully");
 		} 
 		catch (Exception e) 
 		{
-
+            logger.error(e);
 			logger.error("Not hovered on group and confidential report module");
 
 		}
@@ -107,6 +112,7 @@ public class Groupaddition {
 			logger.error("Not hovered on Chit group screen");
 
 		}
+		
 		try {
 			Actions action =new Actions(d);
 			
@@ -138,7 +144,7 @@ public class Groupaddition {
 		// Group name
 		try {
 			 WebElement pw =d.findElement(By.name("ctl00$cphMainContent$txtgroup_no"));
-				pw.sendKeys("ChitGroup");
+				pw.sendKeys(a);
 			logger.info("Chit Group is entered successfully");
 		
 		    } 
@@ -177,6 +183,7 @@ public class Groupaddition {
 		catch (Exception e) 
 		{
 
+			
 			logger.error("Auction date is not entered");
 
 		}
@@ -240,54 +247,103 @@ public class Groupaddition {
 
 		}
 		
-		// Add group button
-		try {
-			 WebElement pw =d.findElement(By.name("ctl00$cphMainContent$btnaddGroup"));
-				pw.click();
-				
-			logger.info("Generate button is clicked successfully");
+		// Duplicate chit group
 		
-		    } 
-		catch (Exception e) 
-		{
+		WebElement pw = d.findElement(By.name("ctl00$cphMainContent$btnaddGroup"));
+		pw.click();
 
-			logger.error("Generate button is not clicked");
-
-		}
+		logger.info("Generate button is clicked successfully");
+		Thread.sleep(2000);
+		d.findElement(By.name("ctl00$cphMainContent$BtnOK")).click();
 		
-		// Ok button
-		String ok ="Group : ChitGroup inserted Successfully";
-		
-		WebElement status =d.findElement(By.id("cphMainContent_lblContent"));
-		
-		if(ok.equals(status.getText()))
-		{
-			
-			d.findElement(By.name("ctl00$cphMainContent$BtnOK")).click();
-			Thread.sleep(2000);
-			logger.info("Chit is created successfully");
-			
-		}
-		else
-		{
-			
-			logger.error("Chit is not created ");
-		}
-		
-		
-		
+		System.out.println("1");
 		
 	}
+		/*if(d.findElement(By.id("cphMainContent_lblContent")).getText().equals(d.findElement(By.id("cphMainContent_lblContent")).getText()))
+		{
+			
+			logger.info("Chitgroup is creted successfully");
+		}
+		}
+		catch (Exception e)
+		{
+			
+			for (int i = 0; i < 100; i++) 
+				
+			{  
+			Alert alert = d.switchTo().alert();
+			System.out.println("7");
+
+			Alert alertt = d.switchTo().alert();
+			System.out.println("8");
+
+			System.out.println("The alert text is:" + alert.getText());
+			System.out.println("9");
+
+			if ((alertt.getText()).equals(alert.getText()))
+			{
+
+				alert.accept();
+				
+
+				System.out.println("10");
+
+				System.out.println("11");
+					String b = a;
+					WebElement allergy = d.findElement(By.name("ctl00$cphMainContent$txtgroup_no"));
+				//	 String b =allergy.getAttribute("Value");
+				// int i=1;
+					System.out.println("12");
+
+				String c = b + i;
+				allergy.clear();
+				allergy.sendKeys(c);
+				System.out.println("13");
+
+				Thread.sleep(2000);
+				WebElement pw = d.findElement(By.name("ctl00$cphMainContent$btnaddGroup"));
+				pw.click();
+				
+			//	pw.click();
+				System.out.println("14");
+
+				Thread.sleep(2000);
+				//
+				String Ok1 =d.findElement(By.id("cphMainContent_lblContent")).getText();
+				
+				String Ok2 =d.findElement(By.id("cphMainContent_lblContent")).getText();
+			}
+			
+				if(d.findElement(By.id("cphMainContent_lblContent")).getText().equals(d.findElement(By.id("cphMainContent_lblContent")).getText()))
+				{
+					
+					logger.info("Chitgroup is created successfully");
+					i=102;
+					
+					
+				}
+
+			   
+			}
+		}*/
 	
-	
+		
+				
+				
+
 
 	@AfterTest()
-	public void aftertest()
+	public void test1()
 	{
 		d.quit();
 		logger.info("Browser is closed sucessfully");
 		
 		
+	}
+	
+	public void Login() {
+//		Loginpage lp = new Loginpage();
+		super.branchname();
 	}
 	
 }

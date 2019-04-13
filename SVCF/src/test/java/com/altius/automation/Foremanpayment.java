@@ -14,8 +14,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Foremanpayment {
-	WebDriver d;
+public class Foremanpayment extends Allocationfornewgroup {
+	//WebDriver d;
 	Logger logger = Logger.getLogger(CashReceiptOtherBranch.class);
 	String amount = "1250";
 
@@ -82,7 +82,7 @@ public class Foremanpayment {
 	}
 	
 	@Test(priority=1)
-	public void paymenthover()
+	public void foremanpaymenthover()
 	{
         // Hovering in trnsaction screen
 		try {
@@ -123,7 +123,7 @@ public class Foremanpayment {
 	
 
 	@Test(priority=2)
-	public void payment() throws InterruptedException
+	public void foremanpayment() throws InterruptedException
 	{
 		try
 		{
@@ -135,7 +135,7 @@ public class Foremanpayment {
 			WebElement manager =d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlGroupNumber_chzn\"]/div/div/input"));
 			Thread.sleep(1000);
 
-			manager.sendKeys("ABC");
+			manager.sendKeys(a);
 			Thread.sleep(1000);
 
 			manager.sendKeys(Keys.TAB);
@@ -162,7 +162,7 @@ public class Foremanpayment {
 			WebElement manager =d.findElement(By.xpath("//*[@id=\"cphMainContent_ddlMemberName_chzn\"]/div/div/input"));
 			Thread.sleep(1000);
 
-			manager.sendKeys("ABC");
+			manager.sendKeys("visalam");
 			Thread.sleep(1000);
 
 			manager.sendKeys(Keys.TAB);
