@@ -3,14 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.altius.automation.Employeeaddition">
+      <class name="com.altius.automation.SVCFfullflow">
         <methods>
-          <include name="browserlauching"/>
-          <include name="aftertest"/>
-          <include name="emplyeededit"/>
-          <include name="fieldvalidation"/>
+          <include name="methods"/>
+          <include name="test1"/>
         </methods>
-      </class> <!-- com.altius.automation.Employeeaddition -->
+      </class> <!-- com.altius.automation.SVCFfullflow -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

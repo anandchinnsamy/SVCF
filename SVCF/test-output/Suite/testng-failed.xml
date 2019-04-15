@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
-  <test thread-count="1" name="login(failed)" parallel="tests">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.altius.automation.Allergy">
+      <class name="com.altius.automation.Loginpage">
         <methods>
-          <include name="allergyinsert"/>
-          <include name="allergyupdate"/>
-          <include name="browserlauching"/>
+          <include name="OnlycorrectPW"/>
+          <include name="wrongUN"/>
+          <include name="wrongPW"/>
+          <include name="wrongUNPW"/>
+          <include name="OnlyCorrectUN"/>
+          <include name="OnlyCorrectUNPW"/>
+          <include name="branchname"/>
+          <include name="afterclass"/>
+          <include name="WithoutUNPW"/>
           <include name="aftertest"/>
+          <include name="methods"/>
         </methods>
-      </class> <!-- com.altius.automation.Allergy -->
+      </class> <!-- com.altius.automation.Loginpage -->
     </classes>
-  </test> <!-- login(failed) -->
+  </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
