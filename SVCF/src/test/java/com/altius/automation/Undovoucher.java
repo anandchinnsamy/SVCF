@@ -9,7 +9,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.server.handler.SendKeys;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
