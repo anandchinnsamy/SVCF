@@ -5654,3 +5654,18 @@ Session ID: ecc2f84eaf65fe0e67e7f1f36af20ee6
 2019-04-13 15:29:00,842 [main] ERROR com.altius.automation.SVCFfullflow - Valid data is not passed to the UN field
 2019-04-13 15:29:00,920 [main] ERROR com.altius.automation.SVCFfullflow - Valid password is not passed to the PW field
 2019-04-13 15:29:04,617 [main] INFO com.altius.automation.SVCFfullflow - Browser is closed successfully
+2019-04-19 16:08:10,074 [main] INFO com.altius.automation.SVCFfullflow - Central office option is selected successfully
+2019-04-19 16:08:13,151 [main] INFO com.altius.automation.SVCFfullflow - Valid UN is passed to the UN field
+2019-04-19 16:08:14,495 [main] INFO com.altius.automation.SVCFfullflow - Valid password data is passed to the PW field
+2019-04-19 16:08:47,935 [main] INFO com.altius.automation.SVCFfullflow - User able to login with Correct UN  &PW
+2019-04-19 16:08:53,873 [main] INFO com.altius.automation.Groupaddition - Hovered on group and confidential report module successfully
+2019-04-19 16:08:54,500 [main] INFO com.altius.automation.Groupaddition - Hovered on chit group screen successfully
+2019-04-19 16:08:55,492 [main] INFO com.altius.automation.Groupaddition - Hovered on Chit Group addition screen successfully
+2019-04-19 16:09:11,201 [main] INFO com.altius.automation.Groupaddition - Hovered on Group addition screen successfully
+2019-04-19 16:09:12,438 [main] INFO com.altius.automation.Groupaddition - Chit Group is entered successfully
+2019-04-19 16:09:13,983 [main] INFO com.altius.automation.Groupaddition - No of installment  is entered successfully
+2019-04-19 16:09:20,454 [main] INFO com.altius.automation.Groupaddition - Auction date  is entered successfully
+2019-04-19 16:09:21,762 [main] INFO com.altius.automation.Groupaddition - Chit value is selected successfully
+2019-04-19 16:09:24,273 [main] INFO com.altius.automation.Groupaddition - Chit period in month is entered successfully
+2019-04-19 16:09:24,432 [main] ERROR com.altius.automation.Groupaddition - Chit category is not selected
+2019-04-19 16:09:24,476 [main] ERROR com.altius.automation.Groupaddition - No of members is not entered successfully

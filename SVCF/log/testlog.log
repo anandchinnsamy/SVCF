@@ -5654,3 +5654,18 @@ Session ID: ecc2f84eaf65fe0e67e7f1f36af20ee6
 2019-04-13 15:29:00,842 | com.altius.automation.SVCFfullflow |ERROR | Valid data is not passed to the UN field
 2019-04-13 15:29:00,920 | com.altius.automation.SVCFfullflow |ERROR | Valid password is not passed to the PW field
 2019-04-13 15:29:04,617 | com.altius.automation.SVCFfullflow |INFO | Browser is closed successfully
+2019-04-19 16:08:10,074 | com.altius.automation.SVCFfullflow |INFO | Central office option is selected successfully
+2019-04-19 16:08:13,151 | com.altius.automation.SVCFfullflow |INFO | Valid UN is passed to the UN field
+2019-04-19 16:08:14,495 | com.altius.automation.SVCFfullflow |INFO | Valid password data is passed to the PW field
+2019-04-19 16:08:47,935 | com.altius.automation.SVCFfullflow |INFO | User able to login with Correct UN  &PW
+2019-04-19 16:08:53,873 | com.altius.automation.Groupaddition |INFO | Hovered on group and confidential report module successfully
+2019-04-19 16:08:54,500 | com.altius.automation.Groupaddition |INFO | Hovered on chit group screen successfully
+2019-04-19 16:08:55,492 | com.altius.automation.Groupaddition |INFO | Hovered on Chit Group addition screen successfully
+2019-04-19 16:09:11,201 | com.altius.automation.Groupaddition |INFO | Hovered on Group addition screen successfully
+2019-04-19 16:09:12,438 | com.altius.automation.Groupaddition |INFO | Chit Group is entered successfully
+2019-04-19 16:09:13,983 | com.altius.automation.Groupaddition |INFO | No of installment  is entered successfully
+2019-04-19 16:09:20,454 | com.altius.automation.Groupaddition |INFO | Auction date  is entered successfully
+2019-04-19 16:09:21,762 | com.altius.automation.Groupaddition |INFO | Chit value is selected successfully
+2019-04-19 16:09:24,273 | com.altius.automation.Groupaddition |INFO | Chit period in month is entered successfully
+2019-04-19 16:09:24,432 | com.altius.automation.Groupaddition |ERROR | Chit category is not selected
+2019-04-19 16:09:24,476 | com.altius.automation.Groupaddition |ERROR | No of members is not entered successfully

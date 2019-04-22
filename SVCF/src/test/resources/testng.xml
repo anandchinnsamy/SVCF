@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test name="Test">
     <classes>
-      <class name="com.altius.automation.SVCFfullflow"/>
+      <class name="com.altius.automation.Undovoucher"/>
     </classes>
   </test> 
 </suite> 
